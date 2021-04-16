@@ -1,6 +1,9 @@
 # MappView Getting Started
 Simple 2 pages navigation based on Help explanations tutorial.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
+
+
 ## Getting started
 This section shows the steps necessary for creating a simple mapp View HMI application with 2 pages.
 
@@ -507,43 +510,3 @@ The "Visualization id" projected in the HMI application (.vis) is transferred as
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView43.png)
 
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
-
-
-#### Value binding
-
-Value binding is used if only the value is needed without units or limits. 
-Data forwarding only involves the value of the bound variable. 
-
-
-Example
-
-<Binding mode="oneWay">
-    <Source xsi:type="opcUa" refId="::AsGlobalPV:gMainLogic.par.coffeeType" attribute="value" />
-    <Target xsi:type="brease" widgetRefId="ImageSwitchCoffeeType" contentRefId="myContent" attribute="selectedIndex" />
-</Binding>
-Attribute"xsi:type" specifies which type of data source is bound.
-Attribute refId as well as attributes widgetRefId and contentRefId (for widgets) reference the data source.
-For details, see Possible data sources. 
-
-The following values are available for "attribute" with value binding: 
-
-xsi:type attribute 
-opcUa value 
-brease Name of a bindable property of a widget with a scalar data type.
-See the widget documentation.
-e.g. the attribute with the name "value" from NumericInput
-
- 
-session value 
-server value 
-snippet value 
-expression result
-Name of an operand
- 
-text value 
-
-Use case
-Displaying an OPC UA variable on a widget
-
-Widgets located in different pieces of content can be bound using session variables. See use case Connect two contents using a session variable.
-Directly binding widgets in different pieces of content is not permitted! 
