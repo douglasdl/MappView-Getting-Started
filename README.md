@@ -120,106 +120,109 @@ The two areas are defined in section <Areas> section with IDs unique to the layo
 ```
 
 #### Adding pages
+
 Two pages are added from the Object Catalog to the Pages node in the visualization package.
 
 The name of the page package in the Logical View must be unique; the underlying filenames can be defined as needed.
 
 When referencing a page in the HMI application, it is not the filename but the ID reference for the page that matters. The package name and filenames are used to logically manage the HMI application components in the Logical View.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView11.png)
  
-
 After the pages have been added, the respective content can be added, edited and then assigned to the corresponding areas in the .page files of each page package.
 
 
 #### Adding the necessary content
+
 This step adds three content files from the Object Catalog to their respective positions in the Logical View, where they can then be edited and assigned to an area in the .page file.
 
 Content is necessary for the following tasks:
 
-Content of Page1: Displaying the speed 
-Content of Page2: Displaying the temperature 
-Navigation content for both pages 
+- Content of Page1: Displaying the speed 
+- Content of Page2: Displaying the temperature 
+- Navigation content for both pages 
+
 A piece of content that should be used on several pages can be managed under the Pages/AreaContents node. This package can be split up into further packages as required by the project's organization.
 
 Page content can be added from the Object Catalog after selecting a page or package AreaContents. In this example, the pieces of contents have been renamed to better express their functions.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView12.png)
 
 The next steps involve editing the pieces of content (ID, size, etc.) and then assigning them to an area on the pages.
 
 
 #### Widgets for displaying text and values
+
 This step configures the two pieces of content for displaying speed and temperature.
 
 The content editor is opened by double-clicking on the respective content file (.content).
 
-Content for speed
+##### Content for speed
+
 After opening the piece of content with filename Page1Content.content, it is displayed with a default name and size ("width" and "height").
 
 The following properties can then be changed in the Properties window.
 
-      Name: Page1Content - This name is used as the ID for assigning to the area on the left of Page1. 
-height: 600 - Corresponds to the entire height of the layout being used on the page. 
-width: 700 - Corresponds to the entire width of the layout being used on the page minus the area for navigation (100 pixels). 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView13.png)
 
+- Name: Page1Content - This name is used as the ID for assigning to the area on the left of Page1. 
+- height: 600 - Corresponds to the entire height of the layout being used on the page. 
+- width: 700 - Corresponds to the entire width of the layout being used on the page minus the area for navigation (100 pixels). 
+ 
 From the Widget Catalog, widget "Label" is added on the piece of content using drag-and-drop.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView14.png)
 
 The text is configured using property "Text" of widget Label.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView15.png)
 
 The next step is to add widget "RadialGauge" from the Object Catalog. The size of the widget can be adjusted using the resize handles.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView16.png)
  
-
 Information about how to bind the widget to an OPC UA variable is described in a later section.
 
-Content for temperature
+##### Content for temperature
+
 After opening the piece of content with filename Page2Content.content, it is displayed with a default name and size ("width" and "height").
 
 As before, its name and width must be changed.
 
-Name: Page2Content - This name is used as the ID for assigning to the area on the left of Page2. 
-height: 600 - Corresponds to the entire height of the layout being used on the page. 
-width: 700 - Corresponds to the entire width of the layout being used on the page minus the area for navigation (100 pixels). 
+- Name: Page2Content - This name is used as the ID for assigning to the area on the left of Page2. 
+- height: 600 - Corresponds to the entire height of the layout being used on the page. 
+- width: 700 - Corresponds to the entire width of the layout being used on the page minus the area for navigation (100 pixels). 
+
 The next step is to add widget "Label" and widget "NumericOutput" from the Widget Catalog to the piece of content.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView17.png)
 
 The piece of content for navigation is configured in the next step.
 
 
-
-
 #### Navigating between two pages
+
 This step configures the content for displaying the navigation options between pages.
 
 The content editor is opened by double-clicking on the content file (.content).
 
-Content for navigation
+##### Content for navigation
+
 After opening the piece of content with filename Navigation.content, it is displayed with its default name and size ("width" and "height").
 
 The following properties can then be changed in the Properties window.
 
-      Name: NavigationContent - This name is used as the ID for assigning to the area on the right of Page1 and Page2. 
-height: 600 - Corresponds to the entire height of the layout being used on the page. 
-width: 100 - Corresponds to the entire width of the navigation content in the layout. 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView18.png)
 
+- Name: NavigationContent - This name is used as the ID for assigning to the area on the right of Page1 and Page2. 
+- height: 600 - Corresponds to the entire height of the layout being used on the page. 
+- width: 100 - Corresponds to the entire width of the navigation content in the layout. 
+ 
 From the Widget Catalog, widget "NavigationBar" is added on the piece of content using drag-and-drop.
 
 This so-called container widget serves as a "carrier" for the NavigationButton widgets it contains. For more information, see Widget description.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView19.png)
 
 Now two NavigationButton widgets from the Widget Catalog are added to the navigation bar; the sizes are changed using "Resize handles" and vertically aligned to each other.
 
@@ -227,44 +230,42 @@ In the properties of each widget, the description text of the NavigationButton a
 
 The IDs of the pages are used when configuring the .page files.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView20.png)
 
 In the next step, the visualization pages are configured by assigning the contents to the corresponding areas using the .page files configuration.
 
 
-
 #### Configuring pages
+
 This step configures the pages by assigning the pieces of content to the respective areas for the layout being used.
 
 Double-clicking on the PAGE file opens it in the Automation Studio workspace in the visual editor.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView21.png)
 
-      The page file needs a unique ID that can be referenced in the visualization object. In addition, the layout to be used must be referenced in attribute layoutId.
+The page file needs a unique ID that can be referenced in the visualization object. In addition, the layout to be used must be referenced in attribute layoutId.
 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView22.png)
+
 By selecting an area in the workspace, the assignment properties of the area are displayed in the Properties window.
 
 The corresponding piece of content must be assigned for each area.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView23.png)
   
-
-
 The same procedure is repeated for Page2 (although the page name and content for AreaMain must be adjusted accordingly).
 
-Configuring the background color for content
+##### Configuring the background color for content
+
 A piece of content does not have a background color when being designed in the content editor. This can only be defined when assigning an area with attribute backColor, for example.
 
 For this example, rgba(204, 255, 153,1) is used for Page1Content, rgba(153, 204, 255,1) for Page2Content, and rgba(0, 89, 179,1) for NavigationContent. 
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView25.png)
  
 The configuration of colors and color gradients is documented in the chapter Themes and styles.
 
 In the next step, the HMI application is configured from the previously created visualization pages in the Configuration View.
-
-
-
-
 
 
 ### Adding the HMI application to the active configuration
