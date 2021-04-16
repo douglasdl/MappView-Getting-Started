@@ -1,12 +1,12 @@
-# MappView-Getting-Started
+# MappView Getting Started
 Simple 2 pages navigation based on Help explanations tutorial.
 
-Getting started
+## Getting started
 This section shows the steps necessary for creating a simple mapp View HMI application with 2 pages.
 
-Topics in this section:
+### Topics in this section:
 
-1• Creating a new ARsim project  
+1• [Creating a new ARsim project](#Creating-a-new-ARsim-project)  
 2• Adding a mapp View HMI application  
 3• Adding a visualization package  
 4• Designing a page  
@@ -16,7 +16,7 @@ Topics in this section:
 
 
 1
-Creating a new ARsim project
+#### Creating a new ARsim project
 The first step is to create an Automation Studio project with an appropriate name.
 
 The two checkboxes in this window must be unselected!
