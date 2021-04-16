@@ -20,7 +20,7 @@ The first step is to create an Automation Studio project with an appropriate nam
 
 The two checkboxes in this window must be unselected!
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView1.png)
  
 Clicking on Next opens the next window, where a name for the configuration can be defined and the hardware selected manually.
 
