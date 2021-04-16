@@ -453,43 +453,60 @@ This step shows how to add a unit to OPC UA variable "Program:Temperature" and b
 The system of units is used for node binding. 
 The system of units is only active if a text configuration exists. 
 
-OPC UA variable units
+#### OPC UA variable units
+
 Before the widget can be bound to the variable, the OPC UA variable must be edited. In this example, the physical unit of variable "Temperature" is degrees Celsius.
 
 Editing takes place once again in the OPC UA default view of the Configuration View. 
 
 After selecting a variable, its unit can be selected in the Engineering Unit Catalog.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView38.png)
  
-Binding the "value" property to the OPC UA variable
+#### Binding the "value" property to the OPC UA variable
+
 In the Content Designer, the OPC UA variable is assigned to property value of wisget NumericOutput in the variable selection dialog box.
 
 In contrast to a pure value binding, the entire node is connected here. This transfers all attributes of the OPC UA variable to the widget.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView39.png)
  
 After selecting variable Program:Temperature, it will be displayed in the Properties window.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView40.png)
  
-Configuring unit switching
+#### Configuring unit switching
+
 In order for the unit to also be displayed in the NumericOutput widget, the corresponding unit property must also be configured. The unit must be specified for the each system of units: metric, imperial and US imperial. The OPC UA unit is automatically converted to the system of units configured for the mapp View HMI application.
 
 unit="{'metric':'CEL','imperial':'myNamespace|FAH','imperial-us':'FAH'}"
 
 The unit is transferred to each system of units as common code. The associated namespace can be specified in the unit by separating it with the pipe character "|". The default namespace (http://www.opcfoundation.org/UA/units/un/cefact) is used if one is not specified.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView41.png)
  
 Starting with mapp View 1.3, the unit for each measurement system can be configured at the unit property by entering the common code in a dialog box.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView42.png)
  
 Switching the system of units can be done with widget MeasurementSystemSelector.
 
 A text system configuration must exist in the Configuration View in order for the value to be displayed properly at runtime. If this configuration file does not exist, "XX" will be displayed in place of the value.
 
 
+### Testing the HMI application
+
+The HMI application can be tested with a browser from the point at which the first HMI application pages (.page) were referenced in the HMI application (.vis).
+
+After this is successfully built and transferred to the ARsim, the HMI application is delivered to the browser (Google Chrome) with the URL:
+
+localhost:81/index.html?visuId=FirstVisu
+
+The "Visualization id" projected in the HMI application (.vis) is transferred as visuId.
+
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView43.png)
+
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
 
 
 #### Value binding
@@ -530,17 +547,3 @@ Displaying an OPC UA variable on a widget
 
 Widgets located in different pieces of content can be bound using session variables. See use case Connect two contents using a session variable.
 Directly binding widgets in different pieces of content is not permitted! 
-
-
-### Testing the HMI application
-The HMI application can be tested with a browser from the point at which the first HMI application pages (.page) were referenced in the HMI application (.vis).
-
-After this is successfully built and transferred to the ARsim, the HMI application is delivered to the browser (Google Chrome) with the URL:
-
-localhost:81/index.html?visuId=FirstVisu
-
-The "Visualization id" projected in the HMI application (.vis) is transferred as visuId.
-
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
-
-
