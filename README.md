@@ -77,7 +77,7 @@ The HMI application should consist of two pages. Each page will have an area for
 - Page1: Displays the speed using a gauge 
 - Page2: Displays the temperature using a numeric output field 
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappViewMockup.png)
  
 These images are a mock-up of the pages to be created.
 
@@ -538,5 +538,7 @@ After this is successfully built and transferred to the ARsim, the HMI applicati
 localhost:81/index.html?visuId=FirstVisu
 
 The "Visualization id" projected in the HMI application (.vis) is transferred as visuId.
+
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
 
 
