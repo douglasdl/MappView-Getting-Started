@@ -1,0 +1,11 @@
+# Ignore Compilation Folders
+Binaries
+Diagnosis
+Temp
+LoggerData
+
+# Ignore Logs
+*.log
+
+# Ignore Users Set Files
+*.set
