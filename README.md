@@ -6,16 +6,15 @@ This section shows the steps necessary for creating a simple mapp View HMI appli
 
 ### Topics in this section:
 
-1• [Creating a new ARsim project](#Creating-a-new-ARsim-project)  
-2• Adding a mapp View HMI application  
-3• Adding a visualization package  
-4• Designing a page  
-5• Adding the HMI application to the active configuration  
-6• Binding widgets to data  
-7• Testing the HMI application  
+- [Creating a new ARsim project](#Creating-a-new-ARsim-project)  
+- [Adding a mapp View HMI application](#Adding-a-mapp-View-HMI-application)  
+- [Adding a visualization package](#Adding-a-visualization-package)
+- [Designing a page](#Designing-a-page)
+- [Adding the HMI application to the active configuration](#Adding-the-HMI-application-to-the-active-configuration)
+- [Binding widgets to data](#Binding-widgets-to-data)
+- [Testing the HMI application](#Testing-the-HMI-application)
 
 
-1
 #### Creating a new ARsim project
 The first step is to create an Automation Studio project with an appropriate name.
 
@@ -33,8 +32,7 @@ Finish creates the project.
 
 
 
-2
-Adding a mapp View HMI application
+### Adding a mapp View HMI application
 In this step, a mapp View package is added to the Logical View.
 
 By selecting the Logical View, you can add the mapp View package from the Object Catalog with drag-and-drop or a double-click. Setting the filter to "mapp View" limits the results in the list of objects.
@@ -54,8 +52,7 @@ The name of the mapp View package cannot be changed. It can be added only undern
 
 
 
-3
-Adding a visualization package
+### Adding a visualization package
 This step adds a visualization package to the mapp View package in the Logical View.
 
 The Visualization package is used for the logical management of visualization components such as visualization pages.
@@ -72,8 +69,7 @@ The name of a visualization package can be changed by selecting it and pressing 
 
 
 
-4
-Designing a page
+### Designing a page
 This section describes the steps necessary for designing a page.
 
 Task definition
@@ -278,8 +274,7 @@ In the next step, the HMI application is configured from the previously created 
 
 
 
-5
-Adding the HMI application to the active configuration
+### Adding the HMI application to the active configuration
 Until now, pages and their components (layout and content) have been created in the Logical View.
 
 In this section, the HMI application is configured and the necessary settings made on the mapp View server. This configuration takes place in the Configuration View under the mapp View node.
@@ -338,8 +333,7 @@ Port 81 is preset in the configuration for HTTP communication between the HMI ap
 
 
 
-6
-Binding widgets to data
+### Binding widgets to data
 Until now, the HMI application has not been bound to any data from the control application.
 
 To do so, each IEC variable in the different programs that should be used in the HMI application must also be made available as an OPC UA variable in the project.
@@ -492,8 +486,7 @@ Directly binding widgets in different pieces of content is not permitted!
 
 
 
-7
-Testing the HMI application
+### Testing the HMI application
 The HMI application can be tested with a browser from the point at which the first HMI application pages (.page) were referenced in the HMI application (.vis).
 
 After this is successfully built and transferred to the ARsim, the HMI application is delivered to the browser (Google Chrome) with the URL:
