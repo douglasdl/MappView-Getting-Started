@@ -24,12 +24,13 @@ The two checkboxes in this window must be unselected!
  
 Clicking on Next opens the next window, where a name for the configuration can be defined and the hardware selected manually.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView2.png)
  
 The hardware can be limited by filtering a standard PC.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView3.png)
  
 Finish creates the project.
-
 
 
 ### Adding a mapp View HMI application
@@ -37,19 +38,18 @@ In this step, a mapp View package is added to the Logical View.
 
 By selecting the Logical View, you can add the mapp View package from the Object Catalog with drag-and-drop or a double-click. Setting the filter to "mapp View" limits the results in the list of objects.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView4.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView5.png)
   
 After it has been added, the mapp View package is displayed in the Logical View.
 
 The mapp View package can only be added once in the Logical View. If the package already exists, it will no longer be shown in the Object Catalog.
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView6.png)
  
 The next step involves adding a visualization package where the pages will be configured.
 
-
-
 The name of the mapp View package cannot be changed. It can be added only underneath the root node.
-
 
 
 ### Adding a visualization package
@@ -59,25 +59,25 @@ The Visualization package is used for the logical management of visualization co
 
 A visualization package can be added from the Object Catalog by first selecting the mapp View package.
 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView7.png) 
 
 After the visualization package has been added, it is possible to begin designing a page in the next step.
 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView8.png)
 
 The name of a visualization package can be changed by selecting it and pressing F2. This name is only used to logically manage HMI components and has no additional effect.
-
 
 
 ### Designing a page
 This section describes the steps necessary for designing a page.
 
-Task definition
+#### Task definition
 The HMI application should consist of two pages. Each page will have an area for navigating between the two pages, with individual content displayed on the left side.
 
-Page1: Displays the speed using a gauge 
-Page2: Displays the temperature using a numeric output field 
+- Page1: Displays the speed using a gauge 
+- Page2: Displays the temperature using a numeric output field 
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
  
 These images are a mock-up of the pages to be created.
 
