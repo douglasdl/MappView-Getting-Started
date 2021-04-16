@@ -83,31 +83,33 @@ These images are a mock-up of the pages to be created.
 
 Topics in this section:
 
-4.1• Creating a layout with 2 areas  
-4.2• Adding pages  
-4.3• Adding the necessary pieces of content  
-4.4• Widgets for displaying text and values  
-4.5• Navigating between two pages  
-4.6• Configuring pages  
+- [Creating a layout with 2 areas](#Creating-a-layout-with-two-areas)  
+- [Adding pages](#Adding pages)
+- [Adding the necessary pieces of content](#Adding-the-necessary-content)
+- [Widgets for displaying text and values](#Widgets-for-displaying-text-and-values)
+- [Navigating between two pages](#Navigating-between-two-pages)
+- [Configuring pages](#Configuring-pages)
 
 
+#### Creating a layout with two areas
 
-4.1
-Creating a layout with two areas
 The page will be split into two areas, which will be defined by a layout. The size of the HMI application will be set to 800 x 600 (W x H), with the area for navigation set to a width of 100 pixels on the right side.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView9.png)
  
 The first step is to add a layout from the Object Catalog after selecting package "Layouts" in the visualization package.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView10.png)
  
 Double-clicking on the layout file opens it in the Automation Studio workspace in XML format.
 
-Layout after editing
+##### Layout after editing
+
 The layout file needs a unique ID that can be referenced on the page. The size of the layout must also be defined with "width" and "height".
 
 The two areas are defined in section <Areas> section with IDs unique to the layout. Attributes "width" and "height" define the size of the area, and attributes "top" and "left" define the starting position.
 
-<code><pre>
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ldef:Layout id="Layout01" height="600" width="800" xmlns:ldef="http://www.br-automation.com/iat2015/layoutDefinition/v2">
 	<Areas>
@@ -115,14 +117,9 @@ The two areas are defined in section <Areas> section with IDs unique to the layo
 		<Area id="AreaNavigation" height="600" width="100" left="700" top="0" />
 	</Areas>
 </ldef:Layout>
-</pre></code>
+```
 
-
-
-
-
-4.2
-Adding pages
+#### Adding pages
 Two pages are added from the Object Catalog to the Pages node in the visualization package.
 
 The name of the page package in the Logical View must be unique; the underlying filenames can be defined as needed.
@@ -135,8 +132,7 @@ When referencing a page in the HMI application, it is not the filename but the I
 After the pages have been added, the respective content can be added, edited and then assigned to the corresponding areas in the .page files of each page package.
 
 
-4.3
-Adding the necessary content
+#### Adding the necessary content
 This step adds three content files from the Object Catalog to their respective positions in the Logical View, where they can then be edited and assigned to an area in the .page file.
 
 Content is necessary for the following tasks:
@@ -154,8 +150,7 @@ Page content can be added from the Object Catalog after selecting a page or pack
 The next steps involve editing the pieces of content (ID, size, etc.) and then assigning them to an area on the pages.
 
 
-4.4
-Widgets for displaying text and values
+#### Widgets for displaying text and values
 This step configures the two pieces of content for displaying speed and temperature.
 
 The content editor is opened by double-clicking on the respective content file (.content).
@@ -204,8 +199,7 @@ The piece of content for navigation is configured in the next step.
 
 
 
-4.5
-Navigating between two pages
+#### Navigating between two pages
 This step configures the content for displaying the navigation options between pages.
 
 The content editor is opened by double-clicking on the content file (.content).
@@ -240,8 +234,7 @@ In the next step, the visualization pages are configured by assigning the conten
 
 
 
-4.6
-Configuring pages
+#### Configuring pages
 This step configures the pages by assigning the pieces of content to the respective areas for the layout being used.
 
 Double-clicking on the PAGE file opens it in the Automation Studio workspace in the visual editor.
