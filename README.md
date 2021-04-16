@@ -84,7 +84,7 @@ These images are a mock-up of the pages to be created.
 Topics in this section:
 
 - [Creating a layout with 2 areas](#Creating-a-layout-with-two-areas)  
-- [Adding pages](#Adding pages)
+- [Adding pages](#Adding-pages)
 - [Adding the necessary pieces of content](#Adding-the-necessary-content)
 - [Widgets for displaying text and values](#Widgets-for-displaying-text-and-values)
 - [Navigating between two pages](#Navigating-between-two-pages)
@@ -261,7 +261,7 @@ A piece of content does not have a background color when being designed in the c
 
 For this example, rgba(204, 255, 153,1) is used for Page1Content, rgba(153, 204, 255,1) for Page2Content, and rgba(0, 89, 179,1) for NavigationContent. 
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView25.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView24.png)
  
 The configuration of colors and color gradients is documented in the chapter Themes and styles.
 
@@ -269,33 +269,32 @@ In the next step, the HMI application is configured from the previously created 
 
 
 ### Adding the HMI application to the active configuration
+
 Until now, pages and their components (layout and content) have been created in the Logical View.
 
 In this section, the HMI application is configured and the necessary settings made on the mapp View server. This configuration takes place in the Configuration View under the mapp View node.
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView25.png)
 
 In the first step, an HMI application must be added and configured with the existing components of the Logical View.
 
-Topics in this section:
+#### Topics in this section:
 
-5.1• Adding an HMI application  
-5.2• Configuring the mapp View server  
-
-
+5.1- [Adding an HMI application](#Adding-an-HMI-application)  
+5.2- [Configuring the mapp View server](#Configuring-the-mapp-View-server)  
 
 
-5.1
-Adding an HMI application
+#### Adding an HMI application
+
 The first step is to select the mapp View package in the Configuration View and add an HMI application from the Object Catalog using drag-and-drop.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView26.png)
         
-
 Double-clicking on the file with extension .vis opens it in the editor in XML format.
 
 Since only two pages have been created at this point, it is sufficient to make the following changes to the HMI application.
 
+```xml
    <?xml version="1.0" encoding="utf-8"?>
   <vdef:Visualization id="FirstVisu" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
         <StartPage pageRefId="Page1" />
@@ -303,142 +302,152 @@ Since only two pages have been created at this point, it is sufficient to make t
                  <Page refId="Page1"/> 
                  <Page refId="Page2" />
         </Pages> 
+```
 
-Attribute Description 
-Visualization ID Unique name of the HMI application. This name is used to access the mapp View server so that the correct HMI application is delivered to the client. 
-StartPage pageRefId Page that is shown first when the HMI application is provided to the client. 
-Page refId Pages from the components in the Logical View that will be provided to a client for this HMI application.
-Attribute id of the .page files is used. 
+Attribute 		Description 
+Visualization ID 	Unique name of the HMI application. This name is used to access the mapp View server so that the correct HMI application is delivered to the client. 
+StartPage pageRefId 	Page that is shown first when the HMI application is provided to the client. 
+Page refId 		Pages from the components in the Logical View that will be provided to a client for this HMI application.
+Attribute id of the .page files is used.
+```xml
 <pdef:Page id="Page1" layoutRefId="Layout01" xmlns:pdef="http://www.br-automation.com/iat2015/pageDefinition/v2">
- 
+``` 
 
 The next step involves configuring the mapp View server settings. The HMI application can then be tested in the browser.
 
 
+#### Configuring the mapp View server
 
-5.2
-Configuring the mapp View server
 In this step, the mapp View server configuration is opened. No changes are necessary for this example. 
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView27.png)
  
-
 Port 81 is preset in the configuration for HTTP communication between the HMI application client (browser) and the mapp View server. This is required when starting the HMI application in the browser.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView28.png)
 
 
 ### Binding widgets to data
+
 Until now, the HMI application has not been bound to any data from the control application.
 
 To do so, each IEC variable in the different programs that should be used in the HMI application must also be made available as an OPC UA variable in the project.
 
 These steps show how to create a program in the Logical View that contains the variables for speed and temperature. These variables are "enabled" in the OPC UA default view configuration in the Configuration View and then bound to the corresponding widgets (RadialGauge and NumericOutput).
 
-Saving bindings
+#### Saving bindings
+
 If a source from the content editor is bound to a widget, its binding is saved in a binding file.
 
 A binding file must be added from the Object Catalog to the mapp View node in the Configuration View and then edited.
 
-      The binding file needs a unique ID that can be referenced in the visualization object. 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView29.png)
 
-Configuring the binding file
+The binding file needs a unique ID that can be referenced in the visualization object. 
+
+##### Configuring the binding file
+
 After the binding is added, it already has an ID that must be referenced in the visualization object.
 
+```xml
    <?xml version="1.0" encoding="utf-8"?>
   <BindingsSet id="binding_0" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Bindings>
                 
         </Bindings> 
   </BindingsSet>
+```
 
-Referencing the binding in the visualization object
+#### Referencing the binding in the visualization object
+
 "BindingSet id" must be referenced in section <BindingsSets> of the visualization object (.vis).
 
-         <BindingsSets>
-                <BindingsSet refId="binding_0" />
+```xml
+        <BindingsSets>
+            <BindingsSet refId="binding_0" />
         </BindingsSets> 
-
+```
  
-
-
 At least one binding file must be added to the project and referenced in the visualization object.
 
-Topics in this section:
+#### Topics in this section:
 
-6.1• Adding a program  
-6.2• OPC UA configuration  
-6.3• Displaying a value  
-6.4• Displaying a value and unit  
+- [Adding a program](#Adding-a-program)
+- [OPC UA configuration](#OPC-UA-configuration)  
+- [Displaying a value](#Displaying-values)  
+- [Displaying a value and unit](#Value-binding)  
 
 
-6.1
-Adding a program
+#### Adding a program
+
 To complete this task, a program containing variables must be added.
 
-Task definition
+##### Task definition
+
 A program named "Program" will be added to the Logical View in this step (in the desired programming language). This program will use the following local variables:
 
-Speed [data type = INT] 
-Temperature [data type =REAL] 
+- Speed [data type = INT] 
+- Temperature [data type =REAL] 
 
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView30.png) 
 
 The OPC UA configuration is made in the next step.
 
 
-6.2
-OPC UA configuration
+#### OPC UA configuration
+
 The following steps are necessary for the OPC UA configuration:
 
-Enabling the OPC UA server in the CPU configuration 
-Adding an OPC UA default view configuration 
-Enabling the variables to be used as OPC UA variables in the HMI application 
-Enabling the OPC UA server
+- [Enabling the OPC UA server in the CPU configuration](#Enabling-the-OPC-UA-server) 
+- [Adding an OPC UA default view configuration](#Adding-an-OPC-UA-default-view-configuration) 
+- [Enabling the variables to be used as OPC UA variables in the HMI application](#IEC-variable-→-OPC-UA-variable) 
+
+##### Enabling the OPC UA server
+
 The OPC UA server is enabled in the CPU configuration under the OPC UA system node.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView31.png)
 
- 
-Adding an OPC UA default view configuration
+##### Adding an OPC UA default view configuration
+
 The OPC UA default view configuration needs to be added once under the Connectivity / OPC UA node from the Object Catalog in the Configuration View.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView32.png)
 
- 
+##### IEC variable → OPC UA variable
 
-IEC variable → OPC UA variable
 After opening the OPC UA default view (OpcUaMap.uad), the OPC UA variables in the Properties window must be enabled by selecting the variables (Enable="True").
 
-
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView33.png)
  
-
 From this point on, these OPC UA variables can also be used as the source for binding to a widget's property (e.g. "value").
 
 The individual attributes of an OPC UA variable are described further on.
 
 
+#### Displaying values
 
-6.3
-Displaying values
 This step shows how to bind OPC UA variable "Program:Speed" to widget RadialGauge in Page1Content.
 
 Select the RadialGauge widget after opening the piece of content in the content editor. The browse dialog box is opened by selecting the "..." button for property "value".
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView34.png)
 
- 
 The variable selection dialog box shows all variables in the OPC UA default view under the "OPC UA" tab. In order to link the value of the OPC UA variable, the value attribute of the variable must be linked.
 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView35.png)
 
- 
 Since the value on widget "RadialGauge" is read-only, the binding mode can be set to read-only. Once bound, the variable is shown in the "value/Binding" row. The binding itself is saved in the binding file with the ID selected in the dialog box. 
 
-
- 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView36.png) 
 
 For further information, see Value binding.
 
 
 
-6.4
- Value binding
+
+#### Value binding
+
 Value binding is used if only the value is needed without units or limits. 
 Data forwarding only involves the value of the bound variable. 
 
