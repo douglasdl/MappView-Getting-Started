@@ -509,4 +509,3 @@ The "Visualization id" projected in the HMI application (.vis) is transferred as
 
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView43.png)
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/FirstVisu.gif)
