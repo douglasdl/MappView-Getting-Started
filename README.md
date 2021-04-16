@@ -280,8 +280,8 @@ In the first step, an HMI application must be added and configured with the exis
 
 #### Topics in this section:
 
-5.1- [Adding an HMI application](#Adding-an-HMI-application)  
-5.2- [Configuring the mapp View server](#Configuring-the-mapp-View-server)  
+- [Adding an HMI application](#Adding-an-HMI-application)  
+- [Configuring the mapp View server](#Configuring-the-mapp-View-server)  
 
 
 #### Adding an HMI application
