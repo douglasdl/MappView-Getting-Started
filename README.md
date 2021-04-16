@@ -289,6 +289,8 @@ In the first step, an HMI application must be added and configured with the exis
 The first step is to select the mapp View package in the Configuration View and add an HMI application from the Object Catalog using drag-and-drop.
 
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView26.png)
+
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView27.png)
         
 Double-clicking on the file with extension .vis opens it in the editor in XML format.
 
@@ -320,11 +322,11 @@ The next step involves configuring the mapp View server settings. The HMI applic
 
 In this step, the mapp View server configuration is opened. No changes are necessary for this example. 
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView27.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView28.png)
  
 Port 81 is preset in the configuration for HTTP communication between the HMI application client (browser) and the mapp View server. This is required when starting the HMI application in the browser.
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView28.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView29.png)
 
 
 ### Binding widgets to data
@@ -341,7 +343,7 @@ If a source from the content editor is bound to a widget, its binding is saved i
 
 A binding file must be added from the Object Catalog to the mapp View node in the Configuration View and then edited.
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView29.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView30.png)
 
 The binding file needs a unique ID that can be referenced in the visualization object. 
 
@@ -389,7 +391,7 @@ A program named "Program" will be added to the Logical View in this step (in the
 - Speed [data type = INT] 
 - Temperature [data type =REAL] 
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView30.png) 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView31.png) 
 
 The OPC UA configuration is made in the next step.
 
@@ -406,19 +408,19 @@ The following steps are necessary for the OPC UA configuration:
 
 The OPC UA server is enabled in the CPU configuration under the OPC UA system node.
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView31.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView32.png)
 
 ##### Adding an OPC UA default view configuration
 
 The OPC UA default view configuration needs to be added once under the Connectivity / OPC UA node from the Object Catalog in the Configuration View.
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView32.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView33.png)
 
 ##### IEC variable → OPC UA variable
 
 After opening the OPC UA default view (OpcUaMap.uad), the OPC UA variables in the Properties window must be enabled by selecting the variables (Enable="True").
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView33.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView34.png)
  
 From this point on, these OPC UA variables can also be used as the source for binding to a widget's property (e.g. "value").
 
@@ -431,15 +433,15 @@ This step shows how to bind OPC UA variable "Program:Speed" to widget RadialGaug
 
 Select the RadialGauge widget after opening the piece of content in the content editor. The browse dialog box is opened by selecting the "..." button for property "value".
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView34.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView35.png)
 
 The variable selection dialog box shows all variables in the OPC UA default view under the "OPC UA" tab. In order to link the value of the OPC UA variable, the value attribute of the variable must be linked.
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView35.png)
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView36.png)
 
 Since the value on widget "RadialGauge" is read-only, the binding mode can be set to read-only. Once bound, the variable is shown in the "value/Binding" row. The binding itself is saved in the binding file with the ID selected in the dialog box. 
 
-![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView36.png) 
+![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView37.png) 
 
 For further information, see Value binding.
 
