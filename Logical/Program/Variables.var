@@ -1,4 +1,5 @@
 VAR
 	Speed : INT;
 	Temperature : REAL;
+	Heating : BOOL;
 END_VAR

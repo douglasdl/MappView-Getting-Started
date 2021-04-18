@@ -1,7 +1,7 @@
 
 
 PROGRAM _INIT
-	Speed       := 40;
+	Heating := TRUE;
+	Speed := 30;
 	Temperature := 20.0;
-	 
 END_PROGRAM

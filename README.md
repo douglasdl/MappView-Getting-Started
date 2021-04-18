@@ -396,6 +396,8 @@ A program named "Program" will be added to the Logical View in this step (in the
 
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView31.png) 
 
+[Creating a dummy simulation program](#Dummy-Program) 
+
 The OPC UA configuration is made in the next step.
 
 
@@ -509,3 +511,43 @@ The "Visualization id" projected in the HMI application (.vis) is transferred as
 
 ![Imagem](https://raw.githubusercontent.com/douglasdl/images/main/MappView43.png)
 
+
+
+### Dummy Program 
+
+Init.st
+```sh
+PROGRAM _INIT
+  Heating := TRUE;
+  Speed := 30;
+  Temperature := 20.0;
+END_PROGRAM
+```
+
+
+Cyclic.st
+```sh
+PROGRAM _CYCLIC
+  IF Heating THEN
+    Speed := Speed + 1;
+    IF Speed >= 100 THEN
+      Heating := FALSE;
+    END_IF
+  ELSE
+    Speed := Speed - 1;
+    IF Speed <= 0 THEN
+      Heating := TRUE;
+    END_IF
+  END_IF
+END_PROGRAM
+```
+
+
+Variables.var
+```sh
+VAR
+  Speed : INT;
+  Temperature : REAL;
+  Heating : BOOL;
+END_VAR
+```

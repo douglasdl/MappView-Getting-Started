@@ -1,5 +1,14 @@
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
-	 
+	IF Heating THEN
+		Speed := Speed + 1;
+		IF Speed >= 100 THEN
+			Heating := FALSE;
+		END_IF
+	ELSE
+		Speed := Speed - 1;
+		IF Speed <= 0 THEN
+			Heating := TRUE;
+		END_IF
+	END_IF
 END_PROGRAM
